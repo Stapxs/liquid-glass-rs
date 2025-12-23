@@ -1,10 +1,13 @@
 [package]
 name = "liquid-glass-rs"
 version = "0.1.0"
-edition = "2025"
+edition = "2024"
 authors = ["Stapxs <stapx@outlook.com>"]
 description = "Native macOS glass effects for Any Window using Rust and Objective-C"
 license = "MIT"
+repository = "https://github.com/Stapxs/liquid-glass-rs"
+readme = "README.md"
+keywords = ["macos", "liquid-glass"]
 
 [dependencies]
 # Objective-C runtime bindings
