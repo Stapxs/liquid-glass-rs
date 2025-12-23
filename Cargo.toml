@@ -1,0 +1,33 @@
+[package]
+name = "liquid-glass-rs"
+version = "0.1.0"
+edition = "2025"
+authors = ["Stapxs <stapx@outlook.com>"]
+description = "Native macOS glass effects for Any Window using Rust and Objective-C"
+license = "MIT"
+
+[dependencies]
+# Objective-C runtime bindings
+objc2 = "0.5"
+objc2-foundation = { version = "0.2", features = ["all"] }
+objc2-app-kit = { version = "0.2", features = ["all"] }
+
+# Core graphics
+core-graphics = "0.23"
+
+# Error handling
+thiserror = "1.0"
+
+# cocoa for easier macOS API access
+cocoa = "0.25"
+objc = "0.2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+block2 = "0.5"
+
+[lib]
+name = "liquid_glass_rs"
+crate-type = ["rlib"]
+
+[features]
+default = []
