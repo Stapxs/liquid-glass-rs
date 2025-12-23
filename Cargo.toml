@@ -1,6 +1,6 @@
 [package]
 name = "liquid-glass-rs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Stapxs <stapx@outlook.com>"]
 description = "Native macOS glass effects for Any Window using Rust and Objective-C"

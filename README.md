@@ -24,7 +24,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-liquid-glass-rs = "0.1"
+liquid-glass-rs = "0.1.1"
 ```
 
 Or install via cargo:
