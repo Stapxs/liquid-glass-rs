@@ -109,7 +109,7 @@ impl MacOSGlassManager {
 
     /// Create fallback NSVisualEffectView
     unsafe fn create_fallback_view(&self, bounds: NSRect) -> Result<id> {
-        let visual = NSVisualEffectView::alloc(nil);
+        let visual = unsafe { NSVisualEffectView::alloc(nil) };
         let visual: id = msg_send![visual, initWithFrame: bounds];
         
         if visual.is_null() {
@@ -191,7 +191,7 @@ impl MacOSGlassManager {
 
         // Set tint color
         if let Some(ref tint) = options.tint_color {
-            if let Ok(color) = self.parse_hex_color(tint) {
+            if let Ok(color) = unsafe { self.parse_hex_color(tint) } {
                 // Try to set tintColor using runtime
                 let sel = sel!(setTintColor:);
                 let responds: bool = msg_send![view, respondsToSelector: sel];
@@ -238,7 +238,7 @@ impl MacOSGlassManager {
             )
         };
 
-        let color = NSColor::colorWithSRGBRed_green_blue_alpha_(nil, r, g, b, a);
+        let color = unsafe { NSColor::colorWithSRGBRed_green_blue_alpha_(nil, r, g, b, a) };
         Ok(color)
     }
 
